@@ -10,6 +10,8 @@ export default makeStyles(()=>({
     },
     cardActions: {
         display: 'flex',
-        justifyContent: 'space-between',
+        marginLeft: '80%',
+        alignItems: 'right',
+        
     },
 }));

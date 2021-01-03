@@ -28,9 +28,9 @@ export default makeStyles((theme)=> ({
     },
 
     grow: {
-        flexGrow: 1,
-        
-        alignItems: 'right' 
+       
+        marginLeft: 'auto',
+        alignContent: 'right'
     },
     search: {
         position: 'relative',
