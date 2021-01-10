@@ -8,6 +8,10 @@ export default makeStyles(()=>({
         height: 0,
         paddingTop: '56.25%',
     },
+    cardContent: {
+        display: 'flex',
+        justifyContent: 'space-between'
+    },
     cardActions: {
         display: 'flex',
         marginLeft: '80%',
