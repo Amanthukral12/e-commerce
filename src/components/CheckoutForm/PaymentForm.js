@@ -42,7 +42,7 @@ const PaymentForm = ({ checkoutToken, shippingData, backStep, onCaptureCheckout,
             onCaptureCheckout(checkoutToken.id, orderData);
             
             nextStep();
-            
+            timeout();
         }
     }
     return (

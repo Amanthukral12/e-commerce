@@ -4,12 +4,13 @@ import useStyles from '../styles';
 import AddressForm from '../AddressForm';
 import PaymentForm from '../PaymentForm';
 import { commerce } from '../../../lib/commerce'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const steps = ['Shipping address', 'Payment details'];
 
 const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     const classes = useStyles();
+    const history = useHistory();
     const [activeStep, setActiveStep] = useState(0);
     const [checkoutToken, setCheckoutToken] = useState(null);
     const [shippingData, setShippingData] = useState({});
@@ -21,7 +22,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
                 setCheckoutToken(token);
                 console.log(token);
             } catch (error) {
-
+                history.pushState("/");
             }
         }
         generateToken();
@@ -80,7 +81,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} timeout={timeout}  />
     return (
         <>
-        
+        <CssBaseline />
             <div className={classes.toolbar} />
             <main className={classes.layout}>
                 <Paper className={classes.paper}>
